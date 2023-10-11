@@ -1,0 +1,45 @@
+
+
+
+<%- include('include/_header') %>
+<link rel="stylesheet" href="/css/styleVehicule.css">
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
+<a type="button" class="btn icon-btn add-btn mt-5 ml-5" href="/views/ajoutervehicule" >
+    <div class="add-icon"></div>
+    <div class="btn-txt mt-1"><span class="police">Ajouter Une Véhicule</span></div>
+</a>
+<div class="container mt-5">
+    <div class="row">
+        <% for(var i=0 ; i<vehicules.length ; i++) { %>
+            <!-- Single Advisor-->
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single_advisor_profile wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <!-- Team Thumb-->
+            <div class="advisor_thumb"><img src="/<%=vehicules[i].image %>" alt="" style="height: 200px; width:200px;">
+                <!-- Social Info-->
+                <div class="social-info"><a href="#"></a></div>
+            </div>
+            <!-- Team Details-->
+            <div class="single_advisor_details_info">
+                <h6><span class="police"><%= vehicules[i].type %></span></h6>
+                <p class="designation"><span class="police"><%= vehicules[i].matricule %></span></p>
+                <p class="designation"><span style="color: red;"><span class="police"><%=  vehicules[i].marque %></span></span></p>
+              
+               <br>
+                
+               <a type="button" class="btn btn-outline-primary" href="/views/modifiervehicule?id=<%= vehicules[i]._id %>" >Modifier</a>
+              
+               <a type="button" class="btn btn-outline-danger delete" href="" data-id="<%= vehicules[i]._id %>">Supprimer</a>
+               <a type="button" class="btn btn-outline-success "  href="/api/positions/<%= vehicules[i]._id %>">Get positions</a>
+            </div>
+            </div>
+            
+        </div>
+        <% } %>
+</div>
+
+
+<%- include('include/_footer') %>

@@ -1,0 +1,28 @@
+<%- include('include/_header') %>
+
+    <div class="registration-form">
+        <form method="post" id="modifier_vehicule">
+            <div class="form-icon">
+                <span ><i class="fa fa-automobile"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="type"  name="type" value="<%= vehicule.type %>">
+                <input type="hidden" class="form-control item" i  name="id" value="<%= vehicule._id %>">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="matricule"  name="matricule" value="<%=  vehicule.matricule %>">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="marque"  name="marque" value="<%= vehicule.marque %>">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account" >Valider les modifications</button>
+            </div>
+        </form>
+        
+    </div>
+   
+
+
+<%- include('include/_footer') %>

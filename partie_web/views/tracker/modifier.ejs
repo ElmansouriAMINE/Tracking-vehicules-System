@@ -1,0 +1,23 @@
+<%- include('../include/_header') %>
+
+    <div class="registration-form">
+        <form method="post" id="modifier_tracker">
+            <div class="form-icon">
+                <span><i class="fa fa-bullseye"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" value="<%= tracker.nom %>" name="nom" id="nom">
+                <input type="text" class="form-control item" value="<%= tracker.adressemac %>" name="adressemac" id="adressemac">
+                <input type="hidden" class="form-control item" value="<%= tracker._id %>" name="id" id="id">
+            </div>
+            
+ 
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account" >Valider Les Modifications</button>
+            </div>
+        </form>
+        
+    </div>
+   
+    
+<%- include('../include/_footer') %>

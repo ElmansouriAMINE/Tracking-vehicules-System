@@ -1,0 +1,17 @@
+<% for(var i=0 ; i<vehicules.length ; i++) { %>
+<tr>
+    <th ><%= i+1 %></th>
+    <td><%= vehicules[i].type %></td>
+   
+    <td><%=  vehicules[i].matricule %></td>
+    <td><%=  vehicules[i].marque %></td>
+   <td><%=   new Date(vehicules[i].createdAt).toISOString().replace(/T/, ' ').replace(/\..+/, '')%></td> 
+    <td><img src="/<%=vehicules[i].image %>" width="120"  alt=""></td>
+    <td>
+        <a type="button" class="btn btn-outline-primary" href="/views/modifiervehicule?id=<%= vehicules[i]._id %>" >Modifier</a>
+      
+        <a type="button" class="btn btn-outline-danger delete" href="" data-id="<%= vehicules[i]._id %>">Supprimer</a>
+        <a type="button" class="btn btn-outline-success "  href="/api/positions/<%= vehicules[i]._id %>">Get positions</a>
+    </td>
+</tr>
+<% } %>

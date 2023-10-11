@@ -1,0 +1,35 @@
+<%- include('../include/_header') %>
+<div class="container mt-5">
+    <table id="table_id" class="tableo row-border stripe hover order-column">
+        <thead>
+           
+            <tr style="background-color: #343a40; color: whitesmoke">
+                
+                <th >ID</th>
+                <th >Tracker</th>
+                <th >Vehicule</th>
+                <th >Debut</th>
+                <th >Fin</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+
+
+<% for(var i=0 ; i<objets.length ; i++) { %>
+    <tr>
+        <th ><%= i+1 %></th>
+        <td><%= objets[i].tracker %></td>
+       
+        <td><%=  objets[i].vehicule %></td>
+        <td><%=   new Date(objets[i].debut).toISOString().replace(/T/, ' ').replace(/\..+/, '')%></td> 
+       <td><%=   new Date(objets[i].fin).toISOString().replace(/T/, ' ').replace(/\..+/, '')%></td> 
+       
+    </tr>
+    <% } %>
+</tbody>
+</table>
+</div>
+
+
+<%- include('../include/_footer') %>

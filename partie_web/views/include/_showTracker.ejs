@@ -1,0 +1,17 @@
+
+
+<% for(var i=0 ; i<trackers.length ; i++) { %>
+    <tr>
+        <th ><span class="police"><%= i+1 %></span</th>
+        <td><span class="police"><%= trackers[i].nom %></span></td>
+        <td><span class="police"><%= trackers[i].adressemac %></span></td>
+       
+      
+        <td>
+            <a type="button" class="btn btn-outline-primary" href="/views/modifiertracker?id=<%= trackers[i]._id %>" >Modifier</a>
+          
+            <a type="button" class="btn btn-outline-danger delete" href="" data-id="<%= trackers[i]._id %>">Supprimer</a>
+            <a type="button" class="btn btn-outline-success "  href="/views/trackeraffectation/<%= trackers[i]._id %>">Activer Ce Tracker</a>
+        </td>
+    </tr>
+    <% } %>

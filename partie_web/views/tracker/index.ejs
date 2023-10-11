@@ -1,0 +1,34 @@
+<%- include('../include/_header') %>
+<link rel="stylesheet" href="/css/styleVehicule.css">
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
+<a type="button" class="btn icon-btn add-btn mt-5 ml-5 " href="/views/ajoutertracker" >
+    <div class="add-icon"></div>
+    <div class="btn-txt mt-1"><span class="police">Ajouter Un Tracker</span></div>
+</a>
+<div class="container mt-5">
+    <table id="table_id" class="tableo row-border stripe hover order-column">
+        <thead>
+            
+           
+            <tr style="background-color: #343a40; color: whitesmoke">
+                
+                <th >ID</th>
+                <th >Tracker</th>
+                <th >@MAC</th>
+                <th >Action</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+        
+            <%- include('../include/_showTracker') %>
+        
+        </tbody>
+    </table>
+</div>
+
+
+<%- include('../include/_footerx') %>

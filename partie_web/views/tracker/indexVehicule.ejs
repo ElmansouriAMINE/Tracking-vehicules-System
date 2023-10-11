@@ -1,0 +1,46 @@
+<%- include('../include/_header') %>
+
+<div class="container mt-5">
+ 
+       
+    <table id="table_id" class="tableo row-border stripe hover order-column">
+        <thead>
+            
+            <tr class="table-dark" style="background-color: #343a40;">
+                
+                <th scope="col" style="background-color: #343a40;">ID</th>
+                <th scope="col" style="background-color: #343a40;">Type</th>
+                <th scope="col" style="background-color: #343a40;">Matricule</th>
+                <th scope="col" style="background-color: #343a40;">marque</th>
+                <th scope="col" style="background-color: #343a40;">Date Mise en circulation</th>
+                <th scope="col" style="background-color: #343a40;">Photo</th>
+                <th scope="col" style="background-color: #343a40;">Action</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0 ; i<vehicules.length ; i++) { %>
+                <tr>
+                    <th scope="row"><%= i+1 %></th>
+                    <td><%= vehicules[i].type %></td>
+                   
+                    <td><%=  vehicules[i].matricule %></td>
+                    <td><%=  vehicules[i].marque %></td>
+                    <td><%=  new Date(vehicules[i].createdAt).toISOString().replace(/T/, ' ').replace(/\..+/, '') %></td> 
+                    <td><img src="/<%= vehicules[i].image  %>" width="120" alt=""></td>
+                    <td>
+                        <form action="/api/helper" method="post">
+                            <input type="hidden" value="<%= tracker_id %>" name="tracker_id">
+                            <input type="hidden" value="<%= vehicules[i]._id %>" name="vehicule_id">
+                           
+                            <button type="submit" class="btn btn-outline-success ">Affecter Le Tracker</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+
+
+<%- include('../include/_footer') %>

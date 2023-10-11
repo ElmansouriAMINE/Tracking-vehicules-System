@@ -1,0 +1,31 @@
+<%- include('../include/_header') %>
+
+    <div class="registration-form">
+        <form action="/api/trackers" method="post" id="ajouter_vehicule">
+            <div class="form-icon">
+                <span><i class="fa fa-bullseye"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="adressemac" placeholder="adressemac" name="adressemac">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="nom" placeholder="Nom Du Tracker" name="nom">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account" >Ajouter ce tracker</button>
+            </div>
+        </form>
+        
+    </div>
+   
+
+<script>
+     $(document).ready(function(){
+            $("#ajouter_vehicule").submit(function(event){
+            alert("Data Inserted Successfully!");
+})
+   
+})
+
+</script>
+<%- include('../include/_footer') %>

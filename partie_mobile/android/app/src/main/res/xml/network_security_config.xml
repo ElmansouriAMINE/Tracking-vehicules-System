@@ -1,0 +1,10 @@
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-config >
+            <certificates src="system"/>
+        </trust-config >
+    </base-config >
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true"> 127.0.0.1 </domain>
+    </domain-config >
+</network-security-config>
